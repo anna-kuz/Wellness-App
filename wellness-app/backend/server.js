@@ -1,36 +1,37 @@
-/* Require modules
----------------------------------------------------------- */
+// require modules
 require('dotenv').config()
 const express = require('express');
 const cors = require('cors')
 const path = require('path')
 
-/* Require the db connection, models, and seed data
----------------------------------------------------------- */
+// require db connection and models
 const db = require('./models');
 
-
-/* Require the routes in the controllers folder
---------------------------------------------------------------- */
-
-
-/* Create the Express app
----------------------------------------------------------- */
+// create express app
 const app = express();
 
+// require routes in the controllers folder
+const detailsCtrl = require('./controllers/details')
+const entriesCtrl = require('./controllers/entries')
 
-/* Middleware (app.use)
----------------------------------------------------------- */
-// cross origin allowance
+
+// MIDDLEWARE
 app.use(cors())
-// body parser - used for POST/PUT/PATCH routes:
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 
 
+// MOUNT ROUTES
+// app.get('/', function (req, res) {
+//     // res.send('Wellness App')
+// });
+app.use('/api/entries', entriesCtrl)
+app.use('/api/details', detailsCtrl)
 
 
-// listening on port 3000
+
+
+// listen to port
 app.listen(process.env.PORT, function () {
     console.log('Express is listening to port', process.env.PORT);
 });
