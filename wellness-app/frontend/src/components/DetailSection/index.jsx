@@ -71,9 +71,11 @@ export default function DetailSection() {
     return (
         <div className="detail-section">
             <h3>Your Profile</h3>
-            <button onClick={toggleCreateForm}>
-                {btnText}
-            </button>
+                <div className="button-container">
+                    <button onClick={toggleCreateForm}>
+                        {btnText}
+                    </button>
+                </div>
             {
                 showCreateForm && (
                     <form onSubmit={handleSubmit}>

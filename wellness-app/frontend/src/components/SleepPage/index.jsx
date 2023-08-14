@@ -36,7 +36,7 @@ export default function SleepPage() {
         </div>
     </div>
 </nav>
-          <h1>Sleep Hours Bar Chart</h1>
+          <h1>Track Your Sleep</h1>
           <SleepBarChart sleepData={sleepData} changeHours={handleChangeHours} />
         </>
       );

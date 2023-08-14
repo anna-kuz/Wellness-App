@@ -65,9 +65,11 @@ export default function EntrySection() {
     return (
         <div className="entry-section">
             <h3>Journal Entries</h3>
-            <button onClick={toggleCreateForm}>
-                {btnText}
-            </button>
+                <div className="button-container">
+                    <button onClick={toggleCreateForm}>
+                        {btnText}
+                    </button>
+                </div>
             {
                 showCreateForm && (
                     <form onSubmit={handleSubmit}>

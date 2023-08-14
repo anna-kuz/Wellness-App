@@ -21,7 +21,7 @@ export default function PersonalPage() {
     </div>
 </nav>
 
-        <h1>Personal Page</h1>
+        <h1>Profile</h1>
         <DetailSection/>
         <EntrySection/>
         </>
