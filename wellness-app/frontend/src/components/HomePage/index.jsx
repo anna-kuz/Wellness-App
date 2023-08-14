@@ -19,7 +19,7 @@ export default function HomePage() {
             <div className="icon icon1">
             </div>
         </Link>
-        <h4 className="icon-text">Personal Profile</h4>
+        <h4 className="icon-text">Profile</h4>
 
     </div>
   

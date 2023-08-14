@@ -1,0 +1,12 @@
+.rcontainer {
+    color: white;
+}
+
+.rcontainer img {
+    max-width: 100vw;
+    padding-bottom: 30px;
+}
+
+.rcontainer {
+    padding-bottom: 60px;
+}

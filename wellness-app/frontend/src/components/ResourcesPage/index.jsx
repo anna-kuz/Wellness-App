@@ -1,4 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
+import "./resources.css"
 
 export default function ResourcesPage() {
     return (
