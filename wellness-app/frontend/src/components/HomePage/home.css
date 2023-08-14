@@ -1,0 +1,64 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.icon-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    background-color: #f0f8ff57;
+    border-radius: 30px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+.icon-text {
+    font-size: 20px;
+    text-align: center;
+}
+
+.icon a {
+    text-decoration: none;
+}
+
+/* .icon a:hover {
+} */
+
+.icon1 {
+    background-image: url(https://media.discordapp.net/attachments/702408542594007102/1139655807764549673/image.png?width=150&height=150);
+    background-size: 60%;
+}
+
+.icon2 {
+    background-image: url(https://media.discordapp.net/attachments/702408542594007102/1139656372401750068/image.png?width=150&height=150);
+    background-size: 60%;
+}
+
+.icon3 {
+    background-image: url(https://media.discordapp.net/attachments/702408542594007102/1139653551937835039/image.png?width=150&height=150);
+    background-size: 60%;
+}
+
+.icon4 {
+    background-image: url(https://media.discordapp.net/attachments/702408542594007102/1139656013600006190/image.png?width=150&height=150);
+    background-size: 60%;
+}

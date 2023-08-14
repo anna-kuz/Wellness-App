@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { createEntry, getEntries } from "../../../utils/backend";
 import Entry from "../Entry";
+import "./entry.css"
 
 export default function EntrySection() {
     const [entries, setEntries] = useState([]);

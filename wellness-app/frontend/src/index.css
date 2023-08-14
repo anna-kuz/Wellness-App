@@ -23,7 +23,7 @@ h1 {
 }
 
 h3 {
-  color: white;
+  color: rgb(72, 142, 255);
   font-size: 30px;
 }
 
@@ -38,5 +38,35 @@ h3 {
 
 
 body {
-  background-color: blueviolet;
+  background-color: #9ec3ff;
+}
+
+
+
+
+button {
+  display: flex;
+  margin: 10px;
+  padding: 5px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 05s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 15px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  background-image: linear-gradient(45deg, #6e9eff 0%, #4e7aff  51%, #ca9fff  100%);
+  cursor: pointer;
+}
+
+button:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+button:active {
+  transform: scale(0.95);
 }

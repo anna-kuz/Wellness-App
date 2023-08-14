@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { createDetail, getDetails } from "../../../utils/backend";
 import Detail from "../Detail";
+import "./detail.css"
 
 export default function DetailSection() {
     const [details, setDetails] = useState([]);
@@ -69,7 +70,7 @@ export default function DetailSection() {
 
     return (
         <div className="detail-section">
-            <h3>Details Section</h3>
+            <h3>Your Profile</h3>
             <button onClick={toggleCreateForm}>
                 {btnText}
             </button>

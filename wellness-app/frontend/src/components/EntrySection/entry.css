@@ -1,0 +1,11 @@
+.entry-section {
+    background-color: white;
+    max-width: 30%;
+    border-radius: 10px;
+    text-align: center;
+    margin: 3rem;
+}
+
+form {
+    border: 1px solid black;
+}

@@ -40,6 +40,7 @@ export default function Entry({ data, refreshEntries }) {
             <div>
                 <button onClick={() => setShowEditForm(true)}>Edit</button>
                 <button onClick={handleDelete}>Delete</button>
+                
             </div>
         </div>
     );
