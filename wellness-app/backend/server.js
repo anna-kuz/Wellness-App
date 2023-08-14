@@ -19,13 +19,13 @@ const entriesCtrl = require('./controllers/entries')
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
+
+
 // use the React build folder for static files
 app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
 
 // Any other route not matching the routes above gets routed by React
-app.get('*', (req, res) => {
-    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
-});
+
 
 
 // MOUNT ROUTES
@@ -35,7 +35,9 @@ app.get('*', (req, res) => {
 app.use('/api/entries', entriesCtrl)
 app.use('/api/details', detailsCtrl)
 
-
+app.get('*', (req, res) => {
+    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
+});
 
 
 // listen to port

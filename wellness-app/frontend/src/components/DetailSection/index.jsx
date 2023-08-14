@@ -8,10 +8,10 @@ export default function DetailSection() {
     const [showCreateForm, setShowCreateForm] = useState(false);
     const [createFormData, setCreateFormData] = useState({
         name: "",
-        age: 0,
+        age: Number,
         gender: "",
         height: "",
-        weight: 0
+        weight: Number
     });
 
     useEffect(() => {

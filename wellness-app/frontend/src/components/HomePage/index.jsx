@@ -13,35 +13,35 @@ export default function HomePage() {
       >
         <h1>Home</h1>
 
-        <div class="icon-row">
-    <div class="column">
+        <div className="icon-row">
+    <div className="column">
         <Link to="/personal">
-            <div class="icon icon1">
-                <h1 class="icon-text">Personal Profile</h1>
+            <div className="icon icon1">
+                <h1 className="icon-text">Personal Profile</h1>
             </div>
         </Link>
     </div>
   
-    <div class="column">
+    <div className="column">
         <Link to="/sleep">
-            <div class="icon icon2">
-                <h1 class="icon-text">Track Sleep</h1>
+            <div className="icon icon2">
+                <h1 className="icon-text">Track Sleep</h1>
             </div>
         </Link>
     </div>
   
-    <div class="column">
+    <div className="column">
         <Link to="/water">
-            <div class="icon icon3">
-                <h1 class="icon-text">Water Intake</h1>
+            <div className="icon icon3">
+                <h1 className="icon-text">Water Intake</h1>
             </div>
         </Link>
     </div>
   
-    <div class="column">
+    <div className="column">
         <Link to="/resources">
-            <div class="icon icon4">
-                <h1 class="icon-text">Wellness Resources</h1>
+            <div className="icon icon4">
+                <h1 className="icon-text">Wellness Resources</h1>
             </div>
         </Link>
     </div>
