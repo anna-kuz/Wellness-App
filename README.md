@@ -1,5 +1,3 @@
-# Wellness-App
-
 # Self-Care App
 
 
@@ -33,7 +31,5 @@ To get started with the Self-Care App, follow these steps:
 4. Run the backend server by executing `npm start` in the backend folder.
 
 5. Launch the frontend by running `npm start` in the frontend folder.
-
-6. Open your web browser and navigate to `http://localhost:3000` to access the app.
 
 ## Technologies Used
