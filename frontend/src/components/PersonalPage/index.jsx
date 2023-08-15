@@ -1,18 +1,38 @@
 import './personal.css'
+import React, {useState} from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import EntrySection from '../EntrySection'
 import DetailSection from '../DetailSection'
+import { set } from 'mongoose';
 
 
 export default function PersonalPage() {
-    // const [checkList, setChecklist] = useState([]) // hold list of todo items
-    // const [newTodo, setNewTodo] = useState = ('') // text for adding new items
+    const [checkList, setChecklist] = useState([]) // hold list of todo items
+    const [newTodo, setNewTodo] = useState = ('') // text for adding new items
 
-    // const handleAddTodo = () => { // add item
-    //     if (newTodo)
+    const handleChangeNewTodo = (event) => {
+        setNewTodo(event.target.value)
+    }
+
+    const handleAddTodo = () => { // add item
+        if (newTodo.trim() !== '') {
+            setChecklist([...checkList, {text: newTodo, checked: false}])
+            setNewTodo('')
+
+        }
+    }
+    // const handleChangeNewTodo = (e) => {
+    //     setNewTodo(e.target.value)
+    // }
+
+    const handleToggleCheckbox = (index) => {
+    const updatedCheckList = [...checkList]
+        updatedCheckList[index].checked = !updatedCheckList[index].checked
+        setChecklist(updatedCheckList)
+    }
 
     return (
-        <>
+<>
 
         {/* NAVBAR */}
     <nav className="bg-transparent p-4 fixed w-full z-50 flex justify-center items-center">
@@ -25,11 +45,38 @@ export default function PersonalPage() {
             <Link to="/resources" className="link text-white">Resources</Link>
         </div>
     </div>
-</nav>
+    </nav>
 
         <h1>Profile</h1>
         <DetailSection/>
         <EntrySection/>
-        </>
+
+    <div className="checklist">
+        <input
+            type='text'
+            value={newTodo}
+            onChange={handleChangeNewTodo}
+            placeholder='Add checklist item'
+        />
+
+            <button onClick={handleAddTodo}>Add Item</button>
+
+    </div>
+
+    <ul>
+        {checkList.map((item, index) => (
+            <li key={i}>
+                <input
+                    type='checkbox'
+                    checked={item.checked}
+                    onChange={() => handleToggleCheckbox(index)}
+                    />
+                    {item.text}
+            </li>
+        ))}
+    </ul>
+
+
+</>
     )
 }
