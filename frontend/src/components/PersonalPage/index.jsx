@@ -3,19 +3,19 @@ import React, {useState} from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import EntrySection from '../EntrySection'
 import DetailSection from '../DetailSection'
-import { set } from 'mongoose';
+import { Input, Button, Checkbox, List } from 'semantic-ui-react';
 
 
 export default function PersonalPage() {
     const [checkList, setChecklist] = useState([]) // hold list of todo items
-    const [newTodo, setNewTodo] = useState = ('') // text for adding new items
+    const [newTodo, setNewTodo] = useState('') // text for adding new items
 
     const handleChangeNewTodo = (event) => {
         setNewTodo(event.target.value)
     }
 
     const handleAddTodo = () => { // add item
-        if (newTodo.trim() !== '') {
+        if (newTodo.trim() !== '') { 
             setChecklist([...checkList, {text: newTodo, checked: false}])
             setNewTodo('')
 
@@ -51,32 +51,36 @@ export default function PersonalPage() {
         <DetailSection/>
         <EntrySection/>
 
-    <div className="checklist">
-        <input
-            type='text'
-            value={newTodo}
-            onChange={handleChangeNewTodo}
-            placeholder='Add checklist item'
-        />
+        <div className="ui segment">
+                <Input
+                    fluid
+                    type="text"
+                    value={newTodo}
+                    onChange={handleChangeNewTodo}
+                    placeholder="Add checklist item"
+                />
+                <Button
+                    primary
+                    fluid
+                    onClick={handleAddTodo}
+                >
+                    Add Item
+                </Button>
+            </div>
 
-            <button onClick={handleAddTodo}>Add Item</button>
-
-    </div>
-
-    <ul>
-        {checkList.map((item, index) => (
-            <li key={i}>
-                <input
-                    type='checkbox'
-                    checked={item.checked}
-                    onChange={() => handleToggleCheckbox(index)}
-                    />
-                    {item.text}
-            </li>
-        ))}
-    </ul>
-
-
-</>
-    )
+            <List divided relaxed className="ui list">
+                {checkList.map((item, index) => (
+                    <List.Item key={index} className="item">
+                        <Checkbox
+                            checked={item.checked}
+                            onChange={() => handleToggleCheckbox(index)}
+                        />
+                        <List.Content>
+                            <List.Header>{item.text}</List.Header>
+                        </List.Content>
+                    </List.Item>
+                ))}
+            </List>
+        </>
+    );
 }
