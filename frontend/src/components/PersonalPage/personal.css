@@ -8,7 +8,6 @@
 
 :root {
     --p-primary-color: #ffffff;
-    --secondary-color: #000000;
     --p-gradient: linear-gradient(
         45deg,
         #4895EF,
@@ -34,3 +33,57 @@
     0% {background-position: left;}
     100% {background-position: right;}
 }
+
+
+.checklist-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--p-primary-color); /* Set the background color */
+    border-radius: 8px;
+  }
+  
+  .checklist {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .checklist input[type="text"],
+  .checklist button {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .checklist-items {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .checklist-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+  }
+  
+  .checklist-items input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .checklist-items label {
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: none;
+    color: #333; /* Set the label color */
+  }
+  
+  .checklist-items li.underlined label {
+    text-decoration: underline;
+  }
+  
+  /* Add background color to checked items */
+  .checklist-items li.underlined {
+    background-color: rgba(0, 0, 0, 0.05); /* Adjust the background color */
+  }
+  

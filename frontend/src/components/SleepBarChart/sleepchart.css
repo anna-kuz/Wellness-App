@@ -1,0 +1,46 @@
+
+.sleep-data-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+    padding: 30px;
+}
+  
+  .sleep-entry {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    
+  }
+  
+  .day-label {
+    margin-right: 10px;
+    color:rgb(255, 255, 255);
+    font-size: 20px;
+
+  }
+  
+  .hours-input {
+    width: 40px;
+    padding: 6px 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    color: rgb(0, 151, 151);
+    background-color: rgba(255, 255, 255, 0.916);
+    
+  }
+  
+  .hours-input:focus {
+    outline: none;
+    border-color: #4285f4;
+  }
+  
+
+  .sleep-data-container h2 {
+    font-size: 30px;
+    padding-bottom: 10px;
+  }

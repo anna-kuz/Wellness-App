@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./water.css"
 
 export default function WaterPage() {
-    const [goal, setGoal] = useState(64) // initial value for water intake goal is set to 64
-    const [intake, setIntake] = useState(0) // current intake (fl oz)
+    const [goal, setGoal] = useState(() => parseInt(localStorage.getItem("goal")) || 64)// initial value for water intake goal is set to 64
+    const [intake, setIntake] = useState(parseInt(localStorage.getItem("intake")) || 0) // current intake (fl oz)
+
+    
+    useEffect(() => {
+        localStorage.setItem("goal", goal.toString());
+        localStorage.setItem("intake", intake.toString());
+    }, [goal, intake]);
+
 
 const handleChangeGoal = (event) => { // change the goal for water intake
     const newGoal = parseInt(event.target.value) // convert the input's value to an integer
@@ -24,6 +31,7 @@ const handleDecrementWater = () => {
 }
 
 
+
     return (
 <div className="w-bg">
 
@@ -40,7 +48,7 @@ const handleDecrementWater = () => {
     </nav>
 
     <div className="water">
-        <div>
+        <div className="goal">
             <label htmlFor="goal">Goal: </label>
                 <input 
                     type="number"
@@ -57,14 +65,16 @@ const handleDecrementWater = () => {
                 ) : (
             <p>Current Intake: {intake} fl oz.</p>
          )}
-
+            <div className="water-btn-container">
                 <button onClick={handleAddWater}>+ (8 fl oz)</button>
                 <button onClick={handleDecrementWater}>- (8 fl oz)</button>
-
+            </div>
 
         </div>
     </div>
-
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "50vh" }}>
+                    <div className="cup"></div>
+                </div>
 
     
 </div>

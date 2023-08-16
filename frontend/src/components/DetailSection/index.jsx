@@ -11,13 +11,14 @@ export default function DetailSection() {
         age: Number,
         gender: "",
         height: "",
-        weight: Number
+        weight: Number,
+        created: new Date(),
     });
 
     useEffect(() => {
         getDetails()
             .then(details => setDetails(details));
-    }, []);
+    }, []); 
 
     function handleInputChange(event) {
         setCreateFormData({

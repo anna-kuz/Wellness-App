@@ -6,7 +6,6 @@ body {
 
 :root {
     --primary-color: #ffffff;
-    --secondary-color: #000000;
     --gradient: linear-gradient(
         45deg,
         #3a0ca3,
@@ -55,7 +54,28 @@ body {
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
+    border: 1px solid white;
 }
+
+.icon h4 {
+    padding: 40px;
+    font-size: 30px;
+}
+
+
+.icon:hover h4 {
+    opacity: 1;
+}
+
+.icon-text {
+    opacity: 0;
+}
+
+.icon-text:hover {
+    opacity: 1;
+}
+
+
 
 .icon-text {
     font-size: 20px;
@@ -70,27 +90,28 @@ body {
 } */
 
 .icon1 {
-    background-image: url(https://media.discordapp.net/attachments/702408542594007102/1139655807764549673/image.png?width=150&height=150);
+    background-image: url(https://media.discordapp.net/attachments/702408542594007102/1141250150984056842/image.png?width=150&height=150);
     background-size: 60%;
+
 }
 
 .icon2 {
-    background-image: url(https://media.discordapp.net/attachments/702408542594007102/1139656372401750068/image.png?width=150&height=150);
+    background-image: url(https://media.discordapp.net/attachments/702408542594007102/1141249391181701140/image.png?width=150&height=150);
     background-size: 60%;
 }
 
 .icon3 {
-    background-image: url(https://media.discordapp.net/attachments/702408542594007102/1139653551937835039/image.png?width=150&height=150);
+    background-image: url(https://media.discordapp.net/attachments/702408542594007102/1141249607028965496/image.png?width=150&height=150);
     background-size: 60%;
 }
 
 .icon4 {
-    background-image: url(https://media.discordapp.net/attachments/702408542594007102/1139656013600006190/image.png?width=150&height=150);
+    background-image: url(https://media.discordapp.net/attachments/702408542594007102/1141249767616282724/image.png?width=150&height=150);
     background-size: 60%;
 }
 
 .column {
-    padding-top: 80px;
+    margin-top: 80px;
     transition: 0.2s;
 
 }
@@ -99,3 +120,53 @@ body {
     transform: scale(1.1);
 }
 
+
+
+.icon:hover {
+    background-image: none;
+}
+
+
+.title h1 {
+    font-size: 100px;
+    font-weight: bold;
+}
+
+
+.welcome {
+    padding-top: 10px;
+}
+
+.welcome h6 {
+    font-size: 20px;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+.home-bg h5 {
+    padding-top: 80px;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.gu {
+    color: #d8c7ff;
+}
+
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 5s ease-in-out;
+  }
+  

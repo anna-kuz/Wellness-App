@@ -63,29 +63,31 @@ export default function PersonalPage() {
         <DetailSection/>
         <EntrySection/>
 
-        <div className="checklist">
-                <input
-                    type='text'
-                    value={newTodo}
-                    onChange={handleChangeNewTodo}
-                    placeholder='Add checklist item'
-                />
+        <div className="checklist-container">
+  <div className="checklist">
+    <input
+      type="text"
+      value={newTodo}
+      onChange={handleChangeNewTodo}
+      placeholder="Add checklist item"
+    />
+    <button onClick={handleAddTodo}>Add Item</button>
+  </div>
 
-                <button onClick={handleAddTodo}>Add Item</button>
-            </div>
+  <ul className="checklist-items">
+    {checkList.map((item, index) => (
+      <li key={index}>
+        <input
+          type="checkbox"
+          checked={item.checked}
+          onChange={() => handleToggleCheckbox(index)}
+        />
+        {item.text}
+      </li>
+    ))}
+  </ul>
+</div>
 
-            <ul>
-                {checkList.map((item, index) => (
-                    <li key={index}>
-                        <input
-                            type='checkbox'
-                            checked={item.checked}
-                            onChange={() => handleToggleCheckbox(index)}
-                        />
-                        {item.text}
-                    </li>
-                ))}
-            </ul>
         </div>
     );
 }
