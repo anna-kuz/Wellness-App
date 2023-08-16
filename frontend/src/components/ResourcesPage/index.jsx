@@ -54,6 +54,13 @@ export default function ResourcesPage() {
             <a href="https://diaryofajournalplanner.com/journal-prompts/">Link</a>
         </div>
 
+        <div className="rcontainer">
+            <img src="https://www.brandhub.ie/custom/public/images/9711-000-4.jpg" alt="calculator" />
+            <h2>Daily Water Intake Calculator</h2>
+            <p>Science-based hydration calculator to easily calculate your recommended daily water intake you need to keep yourself healthy and at peak physical and mental performance. If you are asking yourself how much water should you drink per day our water calculator will calculate that for you in cups (glasses), ounces (oz), and milliliters.</p>
+            <a href="https://www.gigacalculator.com/calculators/water-intake-calculator.php">Link</a>
+        </div>
+
 
 
         </>

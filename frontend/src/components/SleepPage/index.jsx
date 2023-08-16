@@ -1,18 +1,25 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import SleepBarChart from '../SleepBarChart';
 import { Routes, Route, Link } from "react-router-dom";
+import "./sleep.css"
 
 
 export default function SleepPage() {
+    useEffect(() => {
+        const storedSleepData = localStorage.getItem('sleepData');
+        if (storedSleepData) {
+          setSleepData(JSON.parse(storedSleepData));
+        }
+      }, []);
 
     const [sleepData, setSleepData] = useState([
-        {day: "Sunday", hours: 7},
-        {day: "Monday", hours: 6},
-        {day: "Tuesday", hours: 4},
-        {day: "Wednesday", hours: 8},
-        {day: "Thursday", hours: 10},
-        {day: "Friday", hours: 2},
-        {day: "Saturday", hours: 5}
+        {day: "Sunday", hours: 0},
+        {day: "Monday", hours: 0 },
+        {day: "Tuesday", hours: 0},
+        {day: "Wednesday", hours: 0},
+        {day: "Thursday", hours: 0 },
+        {day: "Friday", hours: 0},
+        {day: "Saturday", hours: 0}
     ])
 
     const handleChangeHours = (day, newHours) => {
@@ -20,10 +27,15 @@ export default function SleepPage() {
           entry.day === day ? { ...entry, hours: newHours } : entry // update hours with new value for corresponding day
       );
       setSleepData(updatedSleepData);
+
+      localStorage.setItem('sleepData', JSON.stringify(updatedSleepData));
+
   }
 
+  
+
     return (
-        <>
+        <div className="s-bg">
 
 <nav className="bg-transparent p-4 fixed w-full z-50 flex justify-center items-center">
     <div className="max-w-7xl mx-auto">
@@ -38,7 +50,7 @@ export default function SleepPage() {
 </nav>
           <h1>Track Your Sleep</h1>
           <SleepBarChart sleepData={sleepData} changeHours={handleChangeHours} />
-        </>
+        </div>
       );
     }
 

@@ -1,22 +1,75 @@
+import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import "./water.css"
 
 export default function WaterPage() {
-    return (
-        <>
+    const [goal, setGoal] = useState(64) // initial value for water intake goal is set to 64
+    const [intake, setIntake] = useState(0) // current intake (fl oz)
 
-<nav className="bg-transparent p-4 fixed w-full z-50 flex justify-center items-center">
-    <div className="max-w-7xl mx-auto">
-        <div className="flex space-x-6">
-            <Link to="/" className="link text-white">Home</Link>
-            <Link to="/personal" className="link text-white">Personal</Link>
-            <Link to="/sleep" className="link text-white">Sleep</Link>
-            <Link to="/water" className="link text-white">Water</Link>
-            <Link to="/resources" className="link text-white">Resources</Link>
+const handleChangeGoal = (event) => { // change the goal for water intake
+    const newGoal = parseInt(event.target.value) // convert the input's value to an integer
+    setGoal(newGoal) // update the goal
+}
+
+const handleAddWater = () => {
+    const drink = intake + 8; // adds 8 (fl oz) to your current intake
+    // if (drink <= goal) { // once you've hit your goal you can't add anymore
+        setIntake(drink) //update intake
+    // }
+}
+
+const handleDecrementWater = () => {
+    const empty = intake - 8;
+        setIntake(empty)
+}
+
+
+    return (
+<div className="w-bg">
+
+    <nav className="bg-transparent p-4 fixed w-full z-50 flex justify-center items-center">
+        <div className="max-w-7xl mx-auto">
+            <div className="flex space-x-6">
+                <Link to="/" className="link text-white">Home</Link>
+                <Link to="/personal" className="link text-white">Personal</Link>
+                <Link to="/sleep" className="link text-white">Sleep</Link>
+                <Link to="/water" className="link text-white">Water</Link>
+                <Link to="/resources" className="link text-white">Resources</Link>
+            </div>
+        </div>
+    </nav>
+
+    <div className="water">
+        <div>
+            <label htmlFor="goal">Goal: </label>
+                <input 
+                    type="number"
+                    value={goal}
+                    onChange={handleChangeGoal}   
+                    placeholder="fluid ounces" 
+                />
+        </div>
+
+        <div>
+
+        {intake >= goal ? (
+            <p>Congratulations! You've reached your goal of {goal} fl oz.</p>
+                ) : (
+            <p>Current Intake: {intake} fl oz.</p>
+         )}
+
+                <button onClick={handleAddWater}>+ (8 fl oz)</button>
+                <button onClick={handleDecrementWater}>- (8 fl oz)</button>
+
+
         </div>
     </div>
-</nav>
 
-        <h1>Water Page</h1>
-        </>
+
+    
+</div>
     )
 }
+
+
+// User will be able to track their water intake. User will enter their daily goal for drinking water, which can be edited. Every time a glass of water (8 fl oz) has been drank, the user can fill a glass and that will be added to their water intake for the day.

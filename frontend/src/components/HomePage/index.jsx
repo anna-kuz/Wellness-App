@@ -3,8 +3,15 @@ import { Routes, Route, Link } from "react-router-dom";
 
 
 export default function HomePage() {
+
+    // const backgroundStyle = {
+    //     background: 'linear-gradient(to right, #fff, black)',
+    //     backgroundSize: '100%',
+    //     height: '100vh',
+    //     overflow: 'hidden'
+    // }
     return (
-        <div
+        <div className="home-bg" 
         // style={{
         //   backgroundColor: 'rgb(142, 187, 255)',
         //   backgroundSize: 'cover',

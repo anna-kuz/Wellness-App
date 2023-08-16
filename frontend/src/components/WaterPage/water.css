@@ -1,0 +1,30 @@
+.water {
+    padding-top: 100px;
+}
+
+:root {
+    --p-primary-color: #ffffff;
+    --secondary-color: #000000;
+    --w-gradient: linear-gradient(
+        45deg,
+        #4CC9F0,
+        #39A5F4,
+        #2680F7,
+        #135CFA,
+        #0037FD
+
+    );
+}
+
+.w-bg {
+    background-image: var(--w-gradient);
+    background-size: 300%;
+    height: 100vh;
+    animation: p-bg-animation 5s forwards;
+    overflow: hidden;
+}
+
+@keyframes w-bg-animation {
+    0% {background-position: left;}
+    100% {background-position: right;}
+}

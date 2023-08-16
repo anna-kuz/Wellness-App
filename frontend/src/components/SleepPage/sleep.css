@@ -1,0 +1,33 @@
+
+:root {
+    --p-primary-color: #ffffff;
+    --s-gradient: linear-gradient(
+        45deg,
+        #4cc9f0,
+        #4895EF,
+        #4f6ef7,
+        #574feb,
+        #602bdb,
+        #591abe,
+        #560bad,
+        #580b8b
+
+    );
+}
+
+.s-bg {
+    background-image: var(--s-gradient);
+    background-size: 300%;
+    height: 100vh;
+    animation: p-bg-animation 5s forwards;
+    overflow: hidden;
+}
+
+@keyframes s-bg-animation {
+    0% {background-position: left;}
+    100% {background-position: right;}
+}
+
+.Barchart {
+    background-color: #4cc9f0;
+}

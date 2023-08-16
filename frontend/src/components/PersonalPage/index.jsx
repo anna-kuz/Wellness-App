@@ -1,14 +1,26 @@
 import './personal.css'
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import EntrySection from '../EntrySection'
 import DetailSection from '../DetailSection'
-import { Input, Button, Checkbox, List } from 'semantic-ui-react';
 
 
 export default function PersonalPage() {
-    const [checkList, setChecklist] = useState([]) // hold list of todo items
+    const [checkList, setCheckList] = useState([]) // hold list of todo items
     const [newTodo, setNewTodo] = useState('') // text for adding new items
+
+
+
+
+
+    // useEffect(() => {
+    //     const storedCheckList = JSON.parse(localStorage.getItem('checkList')) || [] // retrieves data stored in browsers localStorage. data is stored 
+    //      setCheckList(storedCheckList)
+    // }, [])
+
+    // useEffect(() => {
+    //     localStorage.setItem('checkList', JSON.stringify(checkList))
+    // }, [checkList])
 
     const handleChangeNewTodo = (event) => {
         setNewTodo(event.target.value)
@@ -16,7 +28,7 @@ export default function PersonalPage() {
 
     const handleAddTodo = () => { // add item
         if (newTodo.trim() !== '') { 
-            setChecklist([...checkList, {text: newTodo, checked: false}])
+            setCheckList([...checkList, {text: newTodo, checked: false}])
             setNewTodo('')
 
         }
@@ -28,11 +40,11 @@ export default function PersonalPage() {
     const handleToggleCheckbox = (index) => {
     const updatedCheckList = [...checkList]
         updatedCheckList[index].checked = !updatedCheckList[index].checked
-        setChecklist(updatedCheckList)
+        setCheckList(updatedCheckList)
     }
 
     return (
-<>
+<div className='personal-bg'>
 
         {/* NAVBAR */}
     <nav className="bg-transparent p-4 fixed w-full z-50 flex justify-center items-center">
@@ -51,36 +63,29 @@ export default function PersonalPage() {
         <DetailSection/>
         <EntrySection/>
 
-        <div className="ui segment">
-                <Input
-                    fluid
-                    type="text"
+        <div className="checklist">
+                <input
+                    type='text'
                     value={newTodo}
                     onChange={handleChangeNewTodo}
-                    placeholder="Add checklist item"
+                    placeholder='Add checklist item'
                 />
-                <Button
-                    primary
-                    fluid
-                    onClick={handleAddTodo}
-                >
-                    Add Item
-                </Button>
+
+                <button onClick={handleAddTodo}>Add Item</button>
             </div>
 
-            <List divided relaxed className="ui list">
+            <ul>
                 {checkList.map((item, index) => (
-                    <List.Item key={index} className="item">
-                        <Checkbox
+                    <li key={index}>
+                        <input
+                            type='checkbox'
                             checked={item.checked}
                             onChange={() => handleToggleCheckbox(index)}
                         />
-                        <List.Content>
-                            <List.Header>{item.text}</List.Header>
-                        </List.Content>
-                    </List.Item>
+                        {item.text}
+                    </li>
                 ))}
-            </List>
-        </>
+            </ul>
+        </div>
     );
 }

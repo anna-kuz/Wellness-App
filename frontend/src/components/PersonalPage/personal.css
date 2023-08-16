@@ -4,3 +4,33 @@
     align-items: center;
     margin: 1rem 0; /* Adjust margin as needed */
 }
+
+
+:root {
+    --p-primary-color: #ffffff;
+    --secondary-color: #000000;
+    --p-gradient: linear-gradient(
+        45deg,
+        #4895EF,
+        #4cc9f0,
+        #4AC8D9,
+        #47C7C2,
+        #42C494,
+        #3DC266,
+        #37BF37
+
+    );
+}
+
+.personal-bg {
+    background-image: var(--p-gradient);
+    background-size: 300%;
+    height: 100vh;
+    animation: p-bg-animation 5s forwards;
+    overflow: hidden;
+}
+
+@keyframes p-bg-animation {
+    0% {background-position: left;}
+    100% {background-position: right;}
+}

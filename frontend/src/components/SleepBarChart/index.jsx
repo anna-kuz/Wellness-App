@@ -1,18 +1,25 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const SleepBarChart = ({ sleepData, changeHours }) => {
+  const textStyle = {
+    fill: "white"
+  }
+
   return (
     <>
+    <div className="barchart" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+     <ResponsiveContainer width="90%" height={400}>
     <BarChart width={900} height={400} data={sleepData}>
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="day" /> 
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Bar dataKey="hours" fill="rgb(97, 150, 255, 0.7)" />
+      <CartesianGrid strokeDasharray="3 3" fill="rgba(255, 255, 255, 0.107)" />
+      <XAxis dataKey="day" tick={textStyle} />
+      <YAxis tick={textStyle} />
+      <Tooltip contentStyle={{ ...textStyle, backgroundColor: 'black' }} />
+      <Legend wrapperStyle={textStyle} />
+      <Bar dataKey="hours" fill="rgba(55, 255, 255, 0.67)" />
     </BarChart>
-
+    </ResponsiveContainer>
+    </div>
 
     <div>
         {sleepData.map(entry => ( // iterate through sleepData entries, create input for each day
