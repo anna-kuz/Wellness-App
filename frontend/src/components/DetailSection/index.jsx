@@ -71,7 +71,7 @@ export default function DetailSection() {
 
     return (
         <div className="detail-section">
-            <h3>Your Profile</h3>
+            <h3>Daily Updates</h3>
                 <div className="button-container">
                     <button onClick={toggleCreateForm}>
                         {btnText}
@@ -112,7 +112,7 @@ export default function DetailSection() {
                             value={createFormData.weight}
                             onChange={handleInputChange}
                         />
-                        <button type="submit">Create</button>
+                        <button className="btn" type="submit">Create</button>
                     </form>
                 )
             }

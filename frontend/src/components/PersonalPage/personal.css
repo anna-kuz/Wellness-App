@@ -24,66 +24,123 @@
 .personal-bg {
     background-image: var(--p-gradient);
     background-size: 300%;
-    height: 100vh;
+    height: 150vh;
     animation: p-bg-animation 5s forwards;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @keyframes p-bg-animation {
     0% {background-position: left;}
     100% {background-position: right;}
 }
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 2rem 0;
+}
 
+.detail-container {
+  flex-basis: 40%;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  margin: 40px;
+}
 
 .checklist-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var(--p-primary-color); /* Set the background color */
-    border-radius: 8px;
-  }
-  
-  .checklist {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .checklist input[type="text"],
-  .checklist button {
-    padding: 6px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .checklist-items {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .checklist-item {
-    display: flex;
-    align-items: center;
-    padding: 5px 0;
-  }
-  
-  .checklist-items input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
-  .checklist-items label {
-    font-size: 16px;
-    line-height: 1.5;
-    text-decoration: none;
-    color: #333; /* Set the label color */
-  }
-  
-  .checklist-items li.underlined label {
-    text-decoration: underline;
-  }
-  
-  /* Add background color to checked items */
-  .checklist-items li.underlined {
-    background-color: rgba(0, 0, 0, 0.05); /* Adjust the background color */
-  }
-  
+  flex-basis: 40%;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 40px;
+}
+
+.entry-section {
+  background-color: white;
+  max-width: 850%;
+  border-radius: 10px;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+
+.detail-container button {
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  padding: 5px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 05s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 15px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  background-image: linear-gradient(45deg, #6e9eff 0%, #4e7aff  51%, #ca9fff  100%);
+  cursor: pointer;
+}
+
+.detail-container button:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.detail-container button:active {
+  transform: scale(0.95);
+}
+
+.entry-section button {
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  padding: 5px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 05s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 15px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  background-image: linear-gradient(45deg, #6e9eff 0%, #4e7aff  51%, #ca9fff  100%);
+  cursor: pointer;
+}
+
+.entry-section button:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.entry-section button:active {
+  transform: scale(0.95);
+}
+
+.checklist {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  flex-wrap: wrap; /* Allow items to wrap onto new lines */
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+
+.checklist input[type="text"],
+.checklist button {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checklist-items input[type="checkbox"] {
+  margin: 15px;
+}

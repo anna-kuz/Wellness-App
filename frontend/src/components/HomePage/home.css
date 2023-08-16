@@ -2,6 +2,7 @@
 body {
     margin: 0;
     padding: 0;
+
 }
 
 :root {
@@ -19,9 +20,8 @@ body {
 .home-bg {
     background-image: var(--gradient);
     background-size: 300%;
-    height: 100vh;
+    height: 120vh;
     animation: bg-animation 5s forwards;
-    overflow: hidden;
 }
 
 @keyframes bg-animation {

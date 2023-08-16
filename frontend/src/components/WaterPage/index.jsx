@@ -46,7 +46,7 @@ const handleDecrementWater = () => {
             </div>
         </div>
     </nav>
-
+<h1>Water Intake</h1>
     <div className="water">
         <div className="goal">
             <label htmlFor="goal">Goal: </label>
@@ -71,12 +71,14 @@ const handleDecrementWater = () => {
             </div>
 
         </div>
+        
     </div>
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "50vh" }}>
                     <div className="cup"></div>
                 </div>
-
-    
+                <div className="goal-help wfade-in">
+                <p>If you need help setting a goal for your water intake, visit our resource page for more info, or click <a href="https://www.gigacalculator.com/calculators/water-intake-calculator.php"><span className="here">here</span>.</a> </p>
+                </div>
 </div>
     )
 }

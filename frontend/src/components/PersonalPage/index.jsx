@@ -11,17 +11,6 @@ export default function PersonalPage() {
 
 
 
-
-
-    // useEffect(() => {
-    //     const storedCheckList = JSON.parse(localStorage.getItem('checkList')) || [] // retrieves data stored in browsers localStorage. data is stored 
-    //      setCheckList(storedCheckList)
-    // }, [])
-
-    // useEffect(() => {
-    //     localStorage.setItem('checkList', JSON.stringify(checkList))
-    // }, [checkList])
-
     const handleChangeNewTodo = (event) => {
         setNewTodo(event.target.value)
     }
@@ -59,12 +48,17 @@ export default function PersonalPage() {
     </div>
     </nav>
 
-        <h1>Profile</h1>
-        <DetailSection/>
-        <EntrySection/>
+        <h1>Your Profile</h1>
+        <div className="profile-container">
+          <div className="detail-container">
+            <DetailSection/>
+          </div>
+
+
 
         <div className="checklist-container">
   <div className="checklist">
+    <h3>Checklist</h3>
     <input
       type="text"
       value={newTodo}
@@ -86,6 +80,10 @@ export default function PersonalPage() {
       </li>
     ))}
   </ul>
+</div>
+</div>
+<div className="entry-section">
+<EntrySection/>
 </div>
 
         </div>

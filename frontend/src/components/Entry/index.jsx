@@ -8,13 +8,36 @@ export default function Entry({ data, refreshEntries }) {
         entry: data.entry
     });
 
-    // FORM FIELDS UPDATES AS USER TYPES
-    function handleInputChange(event) {
-        setEditFormData({
-            ...editFormData,
-            [event.target.name]: event.target.value
-        });
-    }
+// const [speechText, setSpeechText] = useState("")
+
+// const voiceRecognition = new window.SpeechRecognition()
+// voiceRecognition.continuous = true;
+
+// // EVENT LISTENERS FOR SPEECH TO TEXT
+
+// const startSpeechRecognition = () => {
+//     voiceRecognition.start() // start voice recognition
+// }
+
+// const stopSpeechRecognition = () => {
+//     voiceRecognition.stop() // stop voice recognition
+// }
+
+// voiceRecognition.onresult = (event) => {
+//     let transcript = "";
+//     for (let i = 0; i < event.results.length; i++) {
+//       transcript += event.results[i][0].transcript + " ";
+//     }
+//     setSpeechText(transcript);
+//   };
+
+//     // FORM FIELDS UPDATES AS USER TYPES
+//     function handleInputChange(event) {
+//         setEditFormData({
+//             ...editFormData,
+//             [event.target.name]: event.target.value
+//         });
+//     }
 
     // FORM SUBMISSION
     function handleSubmit(event) {
@@ -22,6 +45,11 @@ export default function Entry({ data, refreshEntries }) {
         event.preventDefault();
         // close form
         setShowEditForm(false);
+        //update entry eith speech text
+        setEditFormData({
+            ...editFormData,
+            entry: speechText // Update the entry with speechText
+        });
         // backend updates entry
         updateEntry(editFormData, data._id)
             .then(() => refreshEntries());
@@ -37,11 +65,12 @@ export default function Entry({ data, refreshEntries }) {
         <div>
             <h2>{data.subject}</h2>
             <p>{data.entry}</p>
-            <div>
-                <button onClick={() => setShowEditForm(true)}>Edit</button>
-                <button onClick={handleDelete}>Delete</button>
-                
-            </div>
+        <div className="entry-buttons">
+            <button onClick={() => setShowEditForm(true)}>Edit</button>
+            <button onClick={handleDelete}>Delete</button>
+            {/* <button onClick={startSpeechRecognition}>Start Speech</button> */}
+            {/* <button onClick={stopSpeechRecognition}>Stop Speech</button> */}
+      </div>
         </div>
     );
 
@@ -61,6 +90,11 @@ export default function Entry({ data, refreshEntries }) {
                     value={editFormData.entry}
                     onChange={handleInputChange}
                 />
+                <textarea
+                    id="speechText"
+                    value={speechText}
+                    onChange={(event) => setSpeechText(event.target.value)}
+                    />
                 <div>
                     <button onClick={() => setShowEditForm(false)}>Close</button>
                     <button type="submit">Update</button>

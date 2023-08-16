@@ -18,9 +18,13 @@
 .w-bg {
     background-image: var(--w-gradient);
     background-size: 300%;
-    height: 100vh;
+    height: 110vh;
     animation: p-bg-animation 5s forwards;
     overflow: hidden;
+}
+
+.w-bg h1 {
+    margin-bottom: -80px;
 }
 
 @keyframes w-bg-animation {
@@ -42,6 +46,9 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 
 }
+
+/* https://www.youtube.com/watch?v=wGPDuqgkoew 
+water animation tutorial */ 
 
 .cup:before {
     content: "";
@@ -72,6 +79,7 @@
 }
 
 .water p {
+    padding-top: 20px;
     color: white;
     font-size: 30px;
     text-align: center;
@@ -93,6 +101,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
+    font-size: 18px;
 }
 
 .water-btn-container {
@@ -100,3 +109,50 @@
     justify-content: center; /* Center horizontally */
     margin-top: 20px;
 }
+
+.goal-help {
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.here {
+    color: #cbbbff;
+}
+.here:hover {
+    cursor: pointer;
+}
+
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .wfade-in {
+    animation: fadeIn 10s ease-in-out;
+  }
+  
+
+
+  
+.transparent-navbar {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  .custom-menu {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+  }
+  
+  .custom-menu .item {
+    margin: 0 10px;
+  }
+  
+  

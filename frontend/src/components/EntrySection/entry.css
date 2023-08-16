@@ -1,8 +1,30 @@
 .entry-section {
     background-color: white;
-    max-width: 30%;
+    width: 85%;
     border-radius: 10px;
     text-align: center;
     margin: 3rem;
 }
 
+.entry-section h2 {
+    color: black;
+    font-size: 20px;
+}
+
+.entry-section form {
+    display: grid;
+}
+
+input {
+    border: 1px solid rgb(215, 215, 215);
+}
+
+textarea {
+        border: 1px solid rgb(215, 215, 215);
+}
+
+.entry-buttons {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}

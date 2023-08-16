@@ -18,7 +18,7 @@
 .s-bg {
     background-image: var(--s-gradient);
     background-size: 300%;
-    height: 100vh;
+    height: 120vh;
     animation: p-bg-animation 5s forwards;
     overflow: hidden;
 }
@@ -28,3 +28,20 @@
     100% {background-position: right;}
 }
 
+
+.transparent-navbar {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  .custom-menu {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+  }
+  
+  .custom-menu .item {
+    margin: 0 10px;
+  }
+  
+  
